@@ -30,6 +30,7 @@ setup(
     author="Sylvain Corlay",
     author_email="sylvain.corlay@gmail.com",
     url="https://github.com/pybind/python_example",
+    license="MIT",
     description="A test project using pybind11",
     long_description="",
     ext_modules=ext_modules,
