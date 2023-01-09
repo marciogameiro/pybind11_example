@@ -1,8 +1,12 @@
-{% set data = load_setup_py_data() %}
+# {% set data = load_setup_py_data() %}
 
 package:
-  name: {{ data.get('name') | lower }}
-  version: {{ data.get('version') }}
+  name: python_example
+  version: 0.0.1
+
+# package:
+#   name: {{ data.get('name') | lower }}
+#   version: {{ data.get('version') }}
 
 source:
   path: ..
@@ -20,18 +24,22 @@ requirements:
   host:
     - python
     - pip
-    - pybind11>=2.10
+    - pybind11>=2.10.0
 
   run:
     - python
-    - numpy>=1.19
-    - scipy>=1.9
-    - matplotlib>=3.3
-    - graphviz>=0.16
-    - progressbar2>=4.0
+    # - numpy>=1.19
+    # - scipy>=1.9
+    # - matplotlib>=3.3
+    # - graphviz>=0.16
+    # - progressbar2>=4.0
 
 about:
-  home: {{ data.get('url') }}
-  license: {{ data.get('license') }}
+  summary: An example project built with pybind11.
   license_file: LICENSE
-  summary: {{ data.get('description') }}
+
+# about:
+#   home: {{ data.get('url') }}
+#   license: {{ data.get('license') }}
+#   license_file: LICENSE
+#   summary: {{ data.get('description') }}
