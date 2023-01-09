@@ -42,7 +42,7 @@ jobs:
         run: conda build conda_recipe
 
       - name: Show files
-        run: ls -lh ${CONDA_PREFIX}/conda-bld/*
+        run: ls -lh ${CONDA_PKGS_DIR}
         shell: bash
 
       - name: Install
