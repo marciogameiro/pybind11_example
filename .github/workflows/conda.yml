@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         platform: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [39, 310, 311]
+        python-version: ["3.9", "3.11"]
 
     runs-on: ${{ matrix.platform }}
 
@@ -38,8 +38,16 @@ jobs:
       - name: Prepare
         run: conda install conda-build conda-verify
 
+      - name: Show files
+        run: ls -lh
+        shell: bash
+
       - name: Build
         run: conda build conda_recipe
+
+      - name: Show files
+        run: ls -lh
+        shell: bash
 
       - name: Install
         run: conda install -c ${CONDA_PREFIX}/conda-bld/ python_example
