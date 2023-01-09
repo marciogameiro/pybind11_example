@@ -38,15 +38,11 @@ jobs:
       - name: Prepare
         run: conda install conda-build conda-verify
 
-      - name: Show files
-        run: ls -lh
-        shell: bash
-
       - name: Build
         run: conda build conda_recipe
 
       - name: Show files
-        run: ls -lh
+        run: ls -lh ${CONDA_PREFIX}/conda-bld/*
         shell: bash
 
       - name: Install
